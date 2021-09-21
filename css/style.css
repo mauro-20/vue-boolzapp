@@ -25,9 +25,10 @@ body{
 
 /* contacts */
 .contacts-container{
+  display: flex;
+  flex-direction: column;
   width: 30%;
   height: 100%;
-  background-color: indianred;
 }
 .user-profile{
   display: flex;
@@ -103,7 +104,26 @@ body{
 .search-text:focus{
   border: 1px solid #8c8c8c;
 }
-
+.contacts{
+  height: 100%;
+  overflow-y: scroll;
+  background-color: #fff;
+}
+.contact{
+  border-top: 1px solid #e9ebeb;
+  cursor: pointer;
+}
+.contact.active{
+  background-color: #e9ebeb;
+}
+.contact-wrapper{
+  display: flex;
+  align-items: flex-start;
+  padding: 10px 20px;
+}
+.contact-name{
+  margin-left: 10px;
+}
 /* chat */
 .chat-container{
   width: 70%;
