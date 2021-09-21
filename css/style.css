@@ -112,7 +112,7 @@ body{
   border-top: 1px solid #e9ebeb;
   cursor: pointer;
 }
-.contact.active{
+.contact.selected{
   background-color: #e9ebeb;
 }
 .contact-wrapper{

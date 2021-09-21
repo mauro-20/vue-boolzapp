@@ -59,30 +59,14 @@
         <!-- /search bar -->
         <!-- contacts box -->
         <div class="contacts">
-          <div class="contact active">
+
+          <div class="contact " v-for="(contact, key) in contacts">
             <div class="contact-wrapper">
-              <img src="img/avatar_1.jpg" class="avatar-img">
-              <span class="contact-name">Michele</span>
+              <img :src="`img/avatar${contact.avatar}.jpg`" class="avatar-img">
+              <span class="contact-name">{{contact.name}}</span>
             </div>
           </div>
-          <div class="contact">
-            <div class="contact-wrapper">
-              <img src="img/avatar_2.jpg" class="avatar-img">
-              <span class="contact-name">Fabio</span>
-            </div>
-          </div>
-          <div class="contact">
-            <div class="contact-wrapper">
-              <img src="img/avatar_3.jpg" class="avatar-img">
-              <span class="contact-name">Samuele</span>
-            </div>
-          </div>
-          <div class="contact">
-            <div class="contact-wrapper">
-              <img src="img/avatar_6.jpg" class="avatar-img">
-              <span class="contact-name">Luisa</span>
-            </div>
-          </div>
+          
         </div>
         <!-- /contacts box -->
       </div>
