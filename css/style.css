@@ -82,7 +82,6 @@ body{
 .search-bar{
   display: flex;
   border: 1px solid #f5f5f5;
-
 }
 .search-button{
   padding: 5px 20px;
@@ -101,9 +100,9 @@ body{
 .search-text::placeholder{
   color: #8c8c8c;
 }
-.search-text:focus{
+/* .search-text:focus{
   border: 1px solid #8c8c8c;
-}
+} */
 .contacts{
   height: 100%;
   overflow-y: scroll;
@@ -184,12 +183,28 @@ body{
   color: #8c8c8c;
 }
 
-
-
-
 /* chat bottom */
 .chat-bottom{
-  height: 100px;
-  background-color: aquamarine;
+  display: flex;
+  align-items: center;
+  background-color: #f3eeea;
+}
+.chat-bottom-left,
+.chat-bottom-right{
+  padding: 20px 40px;
+  color: #6b7376;
+  font-size: 1.25rem;
+  cursor: pointer;
+}
+.chat-bottom-center{
+  flex-grow: 1;
+  padding: 10px 0;
+}
+.chat-bottom-center input{
+  width: 100%;
+  padding: 15px 20px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
 }
 
