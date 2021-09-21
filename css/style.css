@@ -74,6 +74,35 @@ body{
   color: #578194;
   cursor: pointer;
 }
+.search-span{
+  background-color: #fafafa;
+  padding: 5px;
+}
+.search-bar{
+  display: flex;
+  border: 1px solid #f5f5f5;
+
+}
+.search-button{
+  padding: 5px 20px;
+  border-right: 1px solid #f5f5f5;
+  background-color: #fff;
+  color: #8c8c8c;
+  cursor: pointer;
+}
+.search-text{
+  border: none;
+  width: 100%;
+  padding: 0 5px;
+  background-color: #fff;
+  outline: none;
+}
+.search-text::placeholder{
+  color: #8c8c8c;
+}
+.search-text:focus{
+  border: 1px solid #8c8c8c;
+}
 
 /* chat */
 .chat-container{
