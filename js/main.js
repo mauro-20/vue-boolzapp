@@ -13,8 +13,8 @@
 
 // Milestone 3
 // ● Aggiunta di un messaggio: l ’utente scrive un t esto nella parte bassa e digitando
-// “enter” i l t esto viene aggiunto al t hread sopra, come messaggio verde
-// ● Risposta dell'interlocutore: ad ogni i nserimento di un messaggio, l ’utente riceverà;
+// “enter” i l t esto viene aggiunto al thread sopra, come messaggio verde
+// ● Risposta dell'interlocutore: ad ogni inserimento di un messaggio, l ’utente riceverà;
 // un “ok” come risposta, che apparirà dopo 1 secondo.
 
 //   Milestone 4
@@ -107,16 +107,41 @@ const app = new Vue({
         ],
       },
     ],
-    activeContact: 0
+    activeContact: 0,
+    userMessage: ''
   },
   methods: {
     setActive: function (index) {
-      this.activeContact = index
+      this.activeContact = index;
     },
     isActive: function (index) {
       if (index == this.activeContact) {
-        return true
+        return true;
       }
+    },
+    getDate: function () {
+      const date = new dayjs().format('DD/MM/YYYY H:mm:ss')
+      return date
+    },
+    replyOk: function () {
+      this.contacts[this.activeContact].messages.push(
+        {
+          date: this.getDate(),
+          message: 'ok',
+          status: 'received'
+        }
+      );
+    },
+    sendMessage: function () {
+      this.contacts[this.activeContact].messages.push(
+        {
+          date: this.getDate(),
+          message: this.userMessage,
+          status: 'sent'
+        }
+      );
+      this.userMessage = '';
+      setTimeout(this.replyOk, 1000);
     }
   }
 });
