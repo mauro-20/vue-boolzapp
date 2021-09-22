@@ -106,9 +106,17 @@ const app = new Vue({
         }
         ],
       },
-    ]
+    ],
+    activeContact: 0
   },
   methods: {
-
+    setActive: function (index) {
+      this.activeContact = index
+    },
+    isActive: function (index) {
+      if (index == this.activeContact) {
+        return true
+      }
+    }
   }
 });

@@ -112,7 +112,7 @@ body{
   border-top: 1px solid #e9ebeb;
   cursor: pointer;
 }
-.contact.selected{
+.contact.active{
   background-color: #e9ebeb;
 }
 .contact-wrapper{
@@ -179,7 +179,9 @@ body{
 }
 .message-time{
   text-align: right;
-  font-size: 0.5rem;
+  margin-top: .1875rem;
+  font-size: 0.6rem;
+
   color: #8c8c8c;
 }
 
