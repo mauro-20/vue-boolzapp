@@ -22,6 +22,9 @@
 // contatti il cui nome contiene le lettere inserite(es.Marco, Matteo Martina -> Scrivo
 // “mar” rimangono solo Marco e Martina);
 
+// Milestone bonus:
+// Cancella messaggio: cliccando sul messaggio appare un menu a tendina che permette di cancellare il messaggio selezionato
+
 const app = new Vue({
   el: '#root',
   data: {
@@ -107,7 +110,6 @@ const app = new Vue({
         ],
       },
     ],
-    renderedContacts: [],
     activeContact: 0,
     userMessage: '',
     search: ''
@@ -146,15 +148,17 @@ const app = new Vue({
       setTimeout(this.replyOk, 1000);
     },
     filterContacts: function () {
-      this.renderedContacts = this.contacts.filter((contact) => {
+      this.contacts.forEach(contact => {
         const name = contact.name.toLowerCase();
-        if (name.includes(this.search)) {
-          return true;
+        if (!name.includes(this.search)) {
+          contact.visible = false;
+        } else {
+          contact.visible = true;
         }
       });
+    },
+    renderInfoMsgBox: function () {
+
     }
-  },
-  beforeMount: function () {
-    this.renderedContacts = this.contacts;
   }
 });

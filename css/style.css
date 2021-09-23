@@ -164,6 +164,7 @@ body{
   width: 100%;
 }
 .message{
+  position: relative;
   width: 300px;
   padding: 15px 5px 5px 15px;
   margin-bottom: 10px;
@@ -181,8 +182,18 @@ body{
   text-align: right;
   margin-top: .1875rem;
   font-size: 0.6rem;
-
   color: #8c8c8c;
+}
+.info-msg-box{
+  display: none;
+  position: absolute;
+  bottom: -45px;
+  right: -10px;
+  z-index: 1;
+  padding: 5px;
+  text-align: center;
+  background-color: #fff;
+  box-shadow: 0 0 10px #999999;
 }
 
 /* chat bottom */
