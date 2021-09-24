@@ -172,6 +172,7 @@ body{
 }
 .message-text{
     word-break: break-all;
+    cursor: pointer;
 }
 .message.sent{
   background-color: #d5f9ba;
@@ -187,7 +188,7 @@ body{
   font-size: 0.6rem;
   color: #8c8c8c;
 }
-.info-msg-box{
+.options-box{
   position: absolute;
   bottom: -45px;
   right: -10px;
@@ -197,8 +198,11 @@ body{
   background-color: #fff;
   box-shadow: 0 0 10px #999999;
 }
-.info-msg-box > *:not(:last-child){
+.options-box > *:not(:last-child){
   border-bottom: 1px solid #ddd;
+}
+.options-box > *{
+  cursor: pointer;
 }
 
 /* chat bottom */

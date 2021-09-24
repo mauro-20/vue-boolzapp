@@ -113,10 +113,14 @@ const app = new Vue({
     activeContact: 0,
     userMessage: '',
     search: '',
-    selectedMessage: -1
+    messageActive: {
+      index: null,
+      show: false
+    },
   },
   methods: {
     setActive: function (index) {
+      this.messageActive.show = false
       this.activeContact = index;
     },
     isActive: function (index) {
@@ -164,6 +168,17 @@ const app = new Vue({
           message['id'] = index;
         });
       });
+    },
+    showOption: function (index) {
+      if (this.messageActive.index != index) {
+        this.messageActive.show = true;
+        this.messageActive.index = index;
+      } else if (this.messageActive.index == index && this.messageActive.show == true) {
+        this.messageActive.show = false;
+      } else if (this.messageActive.index == index && this.messageActive.show == false) {
+        this.messageActive.show = true;
+      }
+      // this.messageActive.index = index;
     },
     deleteMessage: function () {
       // console.log(this.contacts[this.activeContact].messages);

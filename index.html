@@ -105,10 +105,10 @@
             <div class="message" 
               v-for="(message,index) in contacts[activeContact].messages" :key="index" 
               :class="message.status">
-              <div @click="selectedMessage = index">
+              <div @click="showOption(index)">
                 <div class="message-text">{{message.message}}</div>
                 <div class="message-time">{{message.date}}</div>
-                <div class="info-msg-box" v-if= " selectedMessage == message.id">
+                <div class="options-box" v-if= "messageActive.show && messageActive.index === index">
                   <div>info messaggio</div>
                   <div @click="deleteMessage">cancella messaggio</div>
                 </div>
