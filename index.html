@@ -104,13 +104,14 @@
             <!-- dynamic messages -->
             <div class="message" 
               v-for="(message,index) in contacts[activeContact].messages" :key="index" 
-              :class="message.status"
-              @click="renderInfoMsgBox">
-              <div class="message-text">{{message.message}}</div>
-              <div class="message-time">{{message.date}}</div>
-              <div class="info-msg-box">
-                <div>info messaggio</div>
-                <div>cancella messaggio</div>
+              :class="message.status">
+              <div @click="selectedMessage = index">
+                <div class="message-text">{{message.message}}</div>
+                <div class="message-time">{{message.date}}</div>
+                <div class="info-msg-box" v-if= " selectedMessage == message.id">
+                  <div>info messaggio</div>
+                  <div @click="deleteMessage">cancella messaggio</div>
+                </div>
               </div>
             </div>
             <!-- /dynamic messages -->

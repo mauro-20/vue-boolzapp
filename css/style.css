@@ -170,6 +170,9 @@ body{
   margin-bottom: 10px;
   border-radius: 10px;
 }
+.message-text{
+    word-break: break-all;
+}
 .message.sent{
   background-color: #d5f9ba;
   margin-left: auto;
@@ -185,7 +188,6 @@ body{
   color: #8c8c8c;
 }
 .info-msg-box{
-  display: none;
   position: absolute;
   bottom: -45px;
   right: -10px;
@@ -194,6 +196,9 @@ body{
   text-align: center;
   background-color: #fff;
   box-shadow: 0 0 10px #999999;
+}
+.info-msg-box > *:not(:last-child){
+  border-bottom: 1px solid #ddd;
 }
 
 /* chat bottom */

@@ -112,7 +112,8 @@ const app = new Vue({
     ],
     activeContact: 0,
     userMessage: '',
-    search: ''
+    search: '',
+    selectedMessage: -1
   },
   methods: {
     setActive: function (index) {
@@ -157,8 +158,23 @@ const app = new Vue({
         }
       });
     },
-    renderInfoMsgBox: function () {
-
+    mapMessageId: function () {
+      this.contacts.forEach((contact) => {
+        contact.messages.forEach((message, index) => {
+          message['id'] = index;
+        });
+      });
+    },
+    deleteMessage: function () {
+      // console.log(this.contacts[this.activeContact].messages);
+      this.contacts[this.activeContact].messages.splice(this.selectedMessage, 1);
+      this.selectedMessage = -1;
+      console.log(this.selectedMessage);
+      this.mapMessageId();
+      console.log(this.selectedMessage);
     }
+  },
+  created: function () {
+    this.mapMessageId();
   }
 });
