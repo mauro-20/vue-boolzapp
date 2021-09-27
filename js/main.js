@@ -162,13 +162,6 @@ const app = new Vue({
         }
       });
     },
-    mapMessageId: function () {
-      this.contacts.forEach((contact) => {
-        contact.messages.forEach((message, index) => {
-          message['id'] = index;
-        });
-      });
-    },
     showOption: function (index) {
       if (this.messageActive.index != index) {
         this.messageActive.show = true;
@@ -178,18 +171,9 @@ const app = new Vue({
       } else if (this.messageActive.index == index && this.messageActive.show == false) {
         this.messageActive.show = true;
       }
-      // this.messageActive.index = index;
     },
     deleteMessage: function () {
-      // console.log(this.contacts[this.activeContact].messages);
-      this.contacts[this.activeContact].messages.splice(this.selectedMessage, 1);
-      this.selectedMessage = -1;
-      console.log(this.selectedMessage);
-      this.mapMessageId();
-      console.log(this.selectedMessage);
+      this.contacts[this.activeContact].messages.splice(this.messageActive.index, 1);
     }
-  },
-  created: function () {
-    this.mapMessageId();
   }
 });
